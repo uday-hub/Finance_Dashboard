@@ -46,6 +46,14 @@ export default function Charts({ transactions }) {
 
   // If no expenses, show empty pie chart state
   const isPieEmpty = pieData.length === 0;
+const COLORS = [
+  "#4ade80", // green
+  "#60a5fa", // blue
+  "#f87171", // red
+  "#facc15", // yellow
+  "#a78bfa", // purple
+  "#fb923c", // orange
+];
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -102,7 +110,7 @@ export default function Charts({ transactions }) {
                 fill="#4ade80"
               >
                 {pieData.map((entry, index) => (
-                  <Cell key={index} />
+                  <Cell key={index} fill={COLORS[index % COLORS.length]}/>
                 ))}
               </Pie>
               <Tooltip />

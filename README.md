@@ -1,16 +1,76 @@
-# React + Vite
+# 💰 Finance Dashboard UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and interactive finance dashboard built as part of a Frontend Developer Internship assignment.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Overview
 
-## React Compiler
+This project demonstrates a simple finance dashboard that helps users:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- View financial summary (balance, income, expenses)
+- Explore transactions with filtering and search
+- Understand spending patterns through charts and insights
+- Experience role-based UI behavior (Admin vs Viewer)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- React (Vite)
+- Tailwind CSS (v4)
+- Recharts (for charts)
+- Lucide React (icons)
+
+---
+
+## ✨ Features
+
+### 📊 Dashboard Overview
+- Summary cards (Balance, Income, Expenses)
+- Time-based chart (trend visualization)
+- Category-based chart (spending breakdown)
+
+### 📋 Transactions
+- Transaction table with:
+  - Date
+  - Category
+  - Amount
+  - Type (income/expense)
+- Search by category/type
+- Filter by income/expense
+- Responsive table with empty state handling
+
+### 👤 Role-Based UI
+- Viewer → read-only access
+- Admin → can add and delete transactions
+- Role switcher in UI (simulated RBAC)
+
+### 📈 Insights
+- Highest spending category
+- Monthly comparison (this month vs last month)
+- Spending trend observation
+
+### 💾 State Management
+- Managed using React hooks (`useState`, `useEffect`)
+- Data persisted using LocalStorage
+
+---
+
+## 🌙 Optional Enhancements (Implemented)
+
+- Dark Mode toggle
+- LocalStorage persistence
+- Add Transaction Modal
+- Responsive layout
+- Smooth UI transitions
+
+---
+
+## 📦 Installation & Setup
+
+```bash
+git clone <your-repo-link>
+cd finance-dashboard
+npm install
+npm run dev
