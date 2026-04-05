@@ -8,6 +8,7 @@ import {
   Pie,
   Cell,
   ResponsiveContainer,
+  Legend
 } from "recharts";
 
 export default function Charts({ transactions }) {
@@ -114,6 +115,7 @@ const COLORS = [
                 ))}
               </Pie>
               <Tooltip />
+               <Legend />
             </PieChart>
           )}
         </ResponsiveContainer>
