@@ -22,6 +22,7 @@ export default function Dashboard() {
   const [filter, setFilter] = useState("all");
   const [showModal, setShowModal] = useState(false);
   const [activePage, setActivePage] = useState("dashboard");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("transactions", JSON.stringify(transactions));
@@ -97,6 +98,8 @@ export default function Dashboard() {
         role={role}
         activePage={activePage}
         setActivePage={setActivePage}
+         isOpen={isSidebarOpen}
+  setIsOpen={setIsSidebarOpen}
       />
 
       <main className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-thin">

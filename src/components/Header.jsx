@@ -1,5 +1,5 @@
 import { Bell, Moon } from "lucide-react";
-export default function Header({ role, setRole }) {
+export default function Header({ role, setRole, setIsSidebarOpen }) {
   const user = {
     name: "John Doe",
   };
@@ -11,10 +11,16 @@ export default function Header({ role, setRole }) {
           Financial Dashboard
         </h1>
         <p className="text-sm text-gray-500">Welcome back 👋</p>
+        <button
+          onClick={() => setIsSidebarOpen((prev) => !prev)}
+          className="sm:hidden p-2 rounded-lg border dark:border-gray-700"
+        >
+          ☰
+        </button>
       </div>
 
       {/* Right Section */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 flex-wrap">
         {/* Role Selector */}
         <div className="relative">
           <div className="flex items-center bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
