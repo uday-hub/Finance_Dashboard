@@ -98,12 +98,17 @@ export default function Dashboard() {
         role={role}
         activePage={activePage}
         setActivePage={setActivePage}
-         isOpen={isSidebarOpen}
-  setIsOpen={setIsSidebarOpen}
+        isOpen={isSidebarOpen}
+        setIsOpen={setIsSidebarOpen}
       />
-
+{isSidebarOpen && (
+  <div
+    className="fixed inset-0 bg-black/40 z-40 sm:hidden"
+    onClick={() => setIsSidebarOpen(false)}
+  />
+)}
       <main className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-thin">
-        <Header role={role} setRole={setRole} />
+        <Header role={role} setRole={setRole} setIsSidebarOpen={setIsSidebarOpen} isSidebarOpen={isSidebarOpen} />
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

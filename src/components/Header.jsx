@@ -1,22 +1,30 @@
 import { Bell, Moon } from "lucide-react";
-export default function Header({ role, setRole, setIsSidebarOpen }) {
+export default function Header({
+  role,
+  setRole,
+  setIsSidebarOpen,
+  isSidebarOpen,
+}) {
   const user = {
     name: "John Doe",
   };
   return (
-    <div className="sticky top-0 z-50 backdrop-blur-lg bg-white/40 dark:bg-gray-900/70 border-b border-gray-200 dark:border-gray-800 px-6 py-4 flex justify-between items-center">
+    <div
+      className={`sticky top-0 backdrop-blur-lg bg-white/40 dark:bg-gray-900/70 border-b border-gray-200 dark:border-gray-800 px-6 py-4 flex justify-between items-center transition-all
+  ${isSidebarOpen ? "z-30" : "z-50"}`}
+    >
+      <button
+        onClick={() => setIsSidebarOpen((prev) => !prev)}
+        className="sm:hidden fixed top-4 right-4 z-[60] p-2 rounded-lg border bg-white dark:bg-gray-800 shadow"
+      >
+        ☰
+      </button>
       {/* Left Section */}
       <div>
         <h1 className="text-xl font-semibold text-gray-800 dark:text-white">
           Financial Dashboard
         </h1>
         <p className="text-sm text-gray-500">Welcome back 👋</p>
-        <button
-          onClick={() => setIsSidebarOpen((prev) => !prev)}
-          className="sm:hidden p-2 rounded-lg border dark:border-gray-700"
-        >
-          ☰
-        </button>
       </div>
 
       {/* Right Section */}
